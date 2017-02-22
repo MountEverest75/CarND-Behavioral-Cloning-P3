@@ -29,7 +29,7 @@ The training data is generated using the graphical simulator provided. The three
 * Approach 3: Data capture on second track was very difficult to train the model. But the data used to train from Approach 1 made the car go round the track successfully.
 
 ## Architecture
-The model built in the project is based on well known network architecture the NVIDIA white [paper](http://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf).
+The model built in the project is based on well known network architecture by NVIDIA described in this white [paper](http://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf).
 
  The architecture of the network is the same as detailed in the paper, except our inputs are 64x64, so
  our network has a total of 2,116,983 params.
@@ -45,4 +45,4 @@ Cropping of images resulted in enhanced behavior to focus on the center of the t
 * Added header record "center,left,right,steering,throttle,brake,speed" manually to the trained data from simulator
 
 ## Conclusions
-In a nutshell, its possible to clone the behavior by re-using models from NVIDIA and other white papers. Experimenting with additional layers and dropouts was interesting, but the model selected from the white paper was found to be more effective in reducing the loss. Overtraining the network did not improve the results as expected. Approaches to use different sets of training data on difficult tracks did result in bad behavior cloned leading to car getting stuck in the middle of the track.  The ideal scenario I found effective was to go slow while training on the easy track using simulator to ensure the car remained in the middle of track. While driving the throttle and other parameters could be tweaked to ensure behavior was copied effectively. 
+In a nutshell, its possible to clone the behavior by re-using models from NVIDIA and other white papers. Experimenting with additional layers and dropouts was interesting, but the model selected from the white paper was found to be more effective in reducing the loss. Overtraining the network did not improve the results as expected. Approaches to use different sets of training data on difficult tracks did result in bad behavior cloned leading to car getting stuck in the middle of the track.  The ideal scenario I found effective was to go slow while training on the easy track using simulator to ensure the car remained in the middle of track. While driving the throttle and other parameters could be tweaked to ensure behavior was copied effectively.
