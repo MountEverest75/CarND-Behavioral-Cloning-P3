@@ -16,12 +16,12 @@ The goals / steps of this project are the following:
 
 
 [//]: # (Image References)
-[image1]: ![](./model.png ) "Model Visualization"
-[image2]: ./examples/random_original_image.png "Random Normal Image"
-[image3]: ./examples/random_shear_image.png "Sheared Image"
-[image4]: ./examples/cropped_image.png "Cropped Image"
-[image5]: ./examples/flipped_image.png "Flipped Image"
-[image7]: ./examples/beightness_or_grayscale.png "Brightness Image"
+[image1]: ![](./model.png) "Model Visualization"
+[image2]: ![](./examples/random_original_image.png) "Random Normal Image"
+[image3]: ![](./examples/random_shear_image.png) "Sheared Image"
+[image4]: ![](./examples/cropped_image.png) "Cropped Image"
+[image5]: ![](./examples/flipped_image.png) "Flipped Image"
+[image7]: ![](./examples/beightness_or_grayscale.png) "Brightness Image"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -72,12 +72,37 @@ The training data has been generated using the approaches described below.
 My initial architecture started had 5 layers modeled from previous labs which ended up being erroneous. After experimenting and suggestions in confluence about using NVIDIA model described in this white [paper](http://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf). I have decided to try this approach and found some improvements through training different datasets.
 
 ####2. Final Model Architecture
-The final model consisted of:
-- 5 CNNs followed by ReLU Activation and MaxPooling2D
-- 5 Fully connected layers each followed ReLU Activation
+The final model consisted of the following layers:
+- Input layer: 64x64x3 images
+- Convolutional: 24 filters (5,5), strides=(2, 2), 'same' padding
+- Max Pooling: 2x2, strides=(1,1)
+
+- Convolutional: 36 filters (5x5), strides=(2, 2), 'same' padding
+- Max Pooling: 2x2, strides=(1,1)
+
+- Convolutional 48 filters (5x5), strides=(2, 2), 'same' padding
+- Max Pooling: 2x2, strides=(1,1)
+
+- Convolutional 64 filters (3x3), strides=(1, 1), 'same' padding
+- Max Pooling: 2x2, strides=(2,2)
+
+- Convolutional 64 filters (3x3), strides=(1, 1), 'same' padding
+- Max Pooling: 2x2, strides=(2,2)
+
+- Flattening layer
+- Fully connected (1164)
+- Dense (100)
+- Dense (50)
+- Dense (10)
+- Output: Dense (1)
+
+The diagram below describes the architecture described above.
+![](./model.png )
 
 ####3. Creation of the Training Set & Training Process
 The approach followed to capture training data has been described below:
-* Approach 1: Using the sample data provided by Udacity as data.zip. This approach yielded better training data as bad behaviors have been found to be minimal.The trained model cloned good behavior very well and the car completed at least a few laps successfully
-* Approach 2: Data captured from simulator using training mode on first track. This approach ended up in a model prone to errors as the recording picked up the bad behaviors of veering out of the track a little bit.
-* Approach 3: Data capture on second track was very difficult to train the model. But the data used to train from Approach 1 made the car go round the track successfully.
+* Approach 1: Data captured from simulator using training mode on Beginner first track. This approach ended up in a model prone to errors as the recording picked up the bad behaviors of veering out of the track a little bit.
+* Approach 2: Data capture on Advanced second track was very difficult to train the model. But the data used to train from Approach 1 made the car go round the track successfully.
+* Approach 3: Using the sample data provided by Udacity as data.zip. This approach yielded better training data as bad behaviors have been found to be minimal.The trained model cloned good behavior very well and the car completed at least a few laps successfully
+
+Finally, it pays off to play the simulator well while driving on the track. I felt that data provided by Udacity is better for training. Although my 8 year old training data on beginner track came close to accuracy. I chose data from "Approach 3" for training my model.
