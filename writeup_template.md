@@ -17,11 +17,11 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 [image1]: ![](./model.png) "Model Visualization"
-[image2]: ![](./examples/random_original_image.png) "Random Normal Image"
-[image3]: ![](./examples/random_shear_image.png) "Sheared Image"
-[image4]: ![](./examples/cropped_image.png) "Cropped Image"
-[image5]: ![](./examples/flipped_image.png) "Flipped Image"
-[image7]: ![](./examples/beightness_or_grayscale.png) "Brightness Image"
+![](./examples/random_original_image.png) "Normal Image"
+![](./examples/random_shear_image.png) "Sheared Image"
+![](./examples/cropped_image.png) "Cropped Image"
+![](./examples/flipped_image.png) "Flipped Image"
+![](./examples/beightness_or_grayscale.png) "Brightness Image"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
