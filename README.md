@@ -52,7 +52,6 @@ Image Count: 24108
 Training Size: 16876
 Validation Size: 7232
 ```
-The batch size of 200 indicates about 200 images loaded and processed while training the model.
 
 ## Data preprocessing
 Cropping of images resulted in enhanced behavior to focus on the center of the track even when the car touches the edges of the track.
