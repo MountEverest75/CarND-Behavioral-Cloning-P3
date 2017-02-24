@@ -64,14 +64,20 @@ Also avoiding the data points in the training set where car ended up in the foll
 ## Data enhancements
 * Added header record "center,left,right,steering,throttle,brake,speed" manually to the trained data from simulator
 The sample image enhancements performed during the training are given below.
-[//]: # (Image References)
+Normal Image
 ![](./random_original_image.png)
-"Random Normal Image"
 
-![](./random_shear_image.png) "Sheared Image"
-![](./cropped_image.png) "Cropped Image"
-![](./flipped_image.png) "Flipped Image"
-![](./beightness_or_grayscale.png) "Brightness Image"
+Sheard Image
+![](./random_shear_image.png)
+
+Cropped Image
+![](./cropped_image.png)
+
+Flipped Image
+![](./flipped_image.png)
+
+Brightness Image
+![](./beightness_or_grayscale.png)
 
 
 ## Conclusions
